@@ -1,0 +1,69 @@
+[
+      {
+        "toy_pic": "https://example.com/toy1.jpg",
+        "toy_name": "ABC Blocks",
+        "seller_name": "Toy World",
+        "seller_email": "toyworld@example.com",
+        "subcategory": "Building Blocks",
+        "price": 19.99,
+        "rating": 4.5,
+        "available_quantity": 10,
+        "description": "ABC Blocks is a set of colorful building blocks designed to teach children the alphabet and basic spelling. The blocks are made from non-toxic materials and are suitable for kids aged 2 and above."
+      },
+      {
+        "toy_pic": "https://example.com/toy2.jpg",
+        "toy_name": "123 Counting Train",
+        "seller_name": "Fun Toys Inc.",
+        "seller_email": "funtoys@example.com",
+        "subcategory": "Building Blocks",
+        "price": 29.99,
+        "rating": 4.2,
+        "available_quantity": 8,
+        "description": "123 Counting Train is an educational building block set that helps children learn numbers and counting. The set includes numbered blocks and a train base to assemble. Suitable for kids aged 3 and above."
+      },
+      {
+        "toy_pic": "https://example.com/toy3.jpg",
+        "toy_name": "Solar System Puzzle",
+        "seller_name": "Science Toys Galore",
+        "seller_email": "sciencegalore@example.com",
+        "subcategory": "Puzzles",
+        "price": 24.99,
+        "rating": 4.7,
+        "available_quantity": 5,
+        "description": "The Solar System Puzzle is an engaging puzzle set that teaches kids about the planets and celestial bodies in our solar system. The puzzle pieces are made from durable cardboard and feature beautiful illustrations. Suitable for kids aged 6 and above."
+      },
+      {
+        "toy_pic": "https://example.com/toy4.jpg",
+        "toy_name": "Dinosaur Excavation Kit",
+        "seller_name": "Paleo Adventures",
+        "seller_email": "paleoadventures@example.com",
+        "subcategory": "Puzzles",
+        "price": 14.99,
+        "rating": 4.0,
+        "available_quantity": 12,
+        "description": "The Dinosaur Excavation Kit allows kids to become paleontologists and excavate dinosaur bones. The kit includes tools and a replica fossil for an interactive and educational experience. Suitable for kids aged 8 and above."
+      },
+      {
+        "toy_pic": "https://example.com/toy5.jpg",
+        "toy_name": "Junior Microscope",
+        "seller_name": "Science Lab Supplies",
+        "seller_email": "sciencelab@example.com",
+        "subcategory": "Scientific Tools",
+        "price": 39.99,
+        "rating": 4.9,
+        "available_quantity": 3,
+        "description": "The Junior Microscope is a beginner-friendly microscope designed for young scientists. It comes with adjustable magnification, specimen slides, and an LED light for observing various specimens. Suitable for kids aged 10 and above."
+      },
+      {
+        "toy_pic": "https://example.com/toy6.jpg",
+        "toy_name": "Chemistry Lab Set",
+        "seller_email": "madscientists@example.com",
+        "subcategory": "Scientific Tools",
+        "price": 49.99,
+        "rating": 4.8,
+        "available_quantity": 7,
+        "description": "The Chemistry Lab Set is a comprehensive kit that allows young chemists to conduct exciting experiments and learn about chemical reactions. The set includes test tubes, beakers, safety goggles, and various chemicals. Suitable for kids aged 12 and above."
+      }
+    ]
+    
+    
