@@ -45,11 +45,17 @@ async function run() {
                  res.send(result)
 
             })
+            app.get('/category/:text',async(req,res)=>{
+                  console.log(req.params.text);
+                  const result=await toyCollection.find({subcategory:req.params.text}).toArray()
+                  res.send(result)
+            })
             app.get('/mytoys/:email',async(req,res)=>{
                   console.log(req.params.email);
                   const result=await toyCollection.find({seller_email:req.params.email}).toArray()
                   res.send(result)
             })
+            
 
             app.post('/addtoy',async(req,res)=>{
                   const addToy=req.body
@@ -61,24 +67,18 @@ async function run() {
 
 
             app.put('/alltoys/:id', async (req, res) => {
-                  // const id = req.params.id
-                  // const filter = { _id: new ObjectId(id) }
 
-                  // const updateToy = req.body
-                  // console.log(updateToy);
-                  // const updateDoc = {
-                  //       $set: {
-                  //             status: updateToy.status
-                  //       }
-                  // }
-                  // const result = await toyCollection.updateOne(filter, updateDoc)
-                  // res.send(result)
                   const id = req.params.id;
                   const body = req.body;
                   const filter = { _id: new ObjectId(id) }
                   const updateDoc = {
                         $set: {
                               toy_name: body.toy_name,
+                              description: body.description,
+                              rating: body.rating,
+                              subcategory: body.subcategory,
+                              toy_pic: body.toy_pic,
+                              available_quantity: body.available_quantity,
                               price: body.price
                         }
                   }
