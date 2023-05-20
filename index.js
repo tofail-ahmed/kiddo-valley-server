@@ -45,11 +45,27 @@ async function run() {
                  res.send(result)
 
             })
+            app.get('/mytoys/:email',async(req,res)=>{
+                  console.log(req.params.email);
+                  const result=await toyCollection.find({seller_email:req.params.email}).toArray()
+                  res.send(result)
+            })
 
             app.post('/addtoy',async(req,res)=>{
                   const addToy=req.body
                   console.log(addToy);
                   const result=await toyCollection.insertOne(addToy)
+                  res.send(result)
+            })
+
+
+
+
+
+            app.delete('/alltoys/:id', async (req, res) => {
+                  const id = req.params.id
+                  const query = { _id: new ObjectId(id) }
+                  const result = await toyCollection.deleteOne(query)
                   res.send(result)
             })
 
