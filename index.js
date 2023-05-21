@@ -34,8 +34,25 @@ async function run() {
       try {
             // Connect the client to the server	(optional starting in v4.7)
             // await client.connect();
-
             const toyCollection = client.db('toyDB').collection('toys')
+
+
+            const indexKeys = { toy_name: 1, subcategory: 1 }
+            const indexOptions = { name: "categoryName" }
+
+
+            app.get('/search/:text', async (req, res) => {
+                  console.log(req.params.text);
+                  const seacrhText = req.params.text;
+                  const result = await toyCollection.find({
+                        $or: [
+                              { toy_name: { $regex: seacrhText, $options: 'i' } },
+                              { subcategory: { $regex: seacrhText, $options: 'i' } }
+                        ]
+                  }).toArray()
+                  res.send(result)
+            })
+
 
             app.get('/alltoys', async (req, res) => {
                   const result = await toyCollection.find().toArray()
@@ -58,6 +75,8 @@ async function run() {
                   const result=await toyCollection.find({seller_email:req.params.email}).toArray()
                   res.send(result)
             })
+
+
             
 
             app.post('/addtoy',async(req,res)=>{
