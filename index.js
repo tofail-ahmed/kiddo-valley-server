@@ -55,9 +55,20 @@ async function run() {
 
 
             app.get('/alltoys', async (req, res) => {
-                  const result = await toyCollection.find().toArray()
+                  const page = parseInt(req.query.page) || 0
+                  const limit = parseInt(req.query.limit) || 0
+                  const skip = page * limit
+                  const result = await toyCollection.find().skip(skip).limit(limit).toArray()
                   res.send(result)
             })
+
+
+            app.get('/totalToys', async (req, res) => {
+                  const result = await toyCollection.estimatedDocumentCount()
+                  console.log(result);
+                  res.send({ totalToys: result })
+            })
+
             app.get('/alltoys/:id',async(req,res)=>{
                   const id=req.params.id
                  const query={_id:new ObjectId(id)}
@@ -65,11 +76,15 @@ async function run() {
                  res.send(result)
 
             })
+
+
             app.get('/category/:text',async(req,res)=>{
                   console.log(req.params.text);
                   const result=await toyCollection.find({subcategory:req.params.text}).toArray()
                   res.send(result)
             })
+
+
             app.get('/mytoys/:email',async(req,res)=>{
                   console.log(req.params.email);
                   const result=await toyCollection.find({seller_email:req.params.email}).toArray()
