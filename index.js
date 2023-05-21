@@ -14,6 +14,9 @@ app.use(express.json());
 app.get('/', (req, res) => {
       res.send('kiddo valley is running')
 })
+app.get('/test', (req, res) => {
+      res.send('kiddo valley is  running fast')
+})
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zhsy6ko.mongodb.net/?retryWrites=true&w=majority`;
@@ -30,7 +33,7 @@ const client = new MongoClient(uri, {
 async function run() {
       try {
             // Connect the client to the server	(optional starting in v4.7)
-            await client.connect();
+            // await client.connect();
 
             const toyCollection = client.db('toyDB').collection('toys')
 
